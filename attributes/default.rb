@@ -20,6 +20,7 @@
 default['boost']['source'] = 'http://sourceforge.net/projects/boost/files/boost/1.60.0/'
 default['boost']['file'] = 'boost_1_60_0.tar.gz'
 default['boost']['build_dir'] = 'boost_1_60_0'
+default['boost']['build_cmd'] = './bootstrap.sh && ./b2 install'
 default['boost']['source_install_deps'] = if platform_family?('debian')
                                             %w(libbz2-dev python-dev tar)
                                           else

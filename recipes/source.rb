@@ -17,7 +17,8 @@ execute 'install-boost' do # ~FC009
   command <<-EOH
   tar xzf #{node['boost']['file']}
   cd #{node['boost']['build_dir']}
-  ./bootstrap.sh && ./bjam install
+  #{node['boost']['build_cmd']}
+  echo dummy
   EOH
   not_if '[ -d /usr/local/share/boost/ ] && ( /sbin/ldconfig -v | grep boost )'
 end
